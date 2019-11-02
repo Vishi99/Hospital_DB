@@ -1,0 +1,195 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  padding: 1rem;
+  height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(144, 199, 247, 0.3);
+}
+
+.navbar .elements {
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+}
+
+.logo-ele {
+  width: 170px;
+}
+
+.list {
+  text-decoration: none;
+  margin: 0.5rem;
+}
+
+.list :hover {
+  background-color: #407be1;
+}
+
+.list-ele {
+  margin: 1rem 0 0 0;
+  font-size: 20px;
+  color: black;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.navbar button {
+  width: 150px;
+  margin: 0.5rem 0 0 0;
+  padding: 0.5rem;
+  font-size: 25px;
+  border-radius: 10px;
+  background-color: #5063f2;
+}
+
+.foot {
+  height: 20px;
+  padding: 0.5rem;
+  font-size: 20px;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  background-color: #3a11f4;
+  color: white;
+  text-align: center;
+}
+
+.details, .appointment {
+  height: 400px;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../imgs/banner_bg.png");
+}
+
+.details .left, .appointment .left {
+  width: 50%;
+  padding: 5rem;
+  margin: 5rem 0 0 0;
+}
+
+.details .left h1, .appointment .left h1 {
+  font-size: 50px;
+  padding: 0.5rem 0rem;
+}
+
+.details .left p, .appointment .left p {
+  text-align: justify;
+  font-size: 20px;
+}
+
+.details .left .login, .appointment .left .login {
+  height: 70px;
+  border-radius: 10px;
+}
+
+.details .left .login button, .appointment .left .login button {
+  width: 150px;
+  margin: 15px 0 0 0;
+  padding: 0.5rem;
+  font-size: 25px;
+  border-radius: 10px;
+  background-color: rgba(43, 143, 230, 0.3);
+}
+
+.details .left .login :hover, .appointment .left .login :hover {
+  background-color: #0752f5;
+}
+
+.details .right, .appointment .right {
+  height: inherit;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+.details .right img, .appointment .right img {
+  height: inherit;
+  width: 500px;
+}
+
+.patients, .equipment {
+  height: 400px;
+  padding: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../imgs/about_bg.png");
+}
+
+.patients .left, .equipment .left {
+  height: inherit;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+.patients .left img, .equipment .left img {
+  height: inherit;
+  width: 500px;
+}
+
+.patients .right, .equipment .right {
+  width: 50%;
+  padding: 5rem;
+}
+
+.patients .right h1, .equipment .right h1 {
+  font-size: 50px;
+  padding: 0.5rem 0rem;
+}
+
+.patients .right p, .equipment .right p {
+  text-align: justify;
+  font-size: 20px;
+}
+/*# sourceMappingURL=doc.css.map */

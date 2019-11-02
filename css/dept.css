@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  padding: 1rem;
+  height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(144, 199, 247, 0.3);
+}
+
+.navbar .elements {
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+}
+
+.logo-ele {
+  width: 170px;
+}
+
+.list {
+  text-decoration: none;
+  margin: 0.5rem;
+}
+
+.list :hover {
+  background-color: #407be1;
+}
+
+.list-ele {
+  font-size: 20px;
+  color: black;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.foot {
+  height: 20px;
+  padding: 0.5rem;
+  font-size: 20px;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  background-color: #3a11f4;
+  color: white;
+  text-align: center;
+}
+
+.banner {
+  text-align: center;
+  font-size: 40px;
+  width: auto;
+}
+
+.banner .ban-img {
+  width: 100%;
+  height: 350px;
+}
+
+.banner .bread {
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  color: white;
+}
+
+.row {
+  background-image: url(../imgs/about_bg.png);
+  padding: 3rem 10rem 10rem 10rem;
+}
+
+.row .subrow1 {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+}
+
+.row .subrow1 :hover {
+  background-color: #335eeb;
+  color: white;
+}
+
+.row .subrow1 .subcol1 {
+  background-color: rgba(149, 206, 244, 0.1);
+  border-style: ridge;
+  border-width: 3px;
+  margin: 1rem 2rem;
+  height: inherit;
+  width: 50%;
+}
+
+.row .subrow1 .subcol1 .heading {
+  font-size: 28px;
+  padding: 10px;
+}
+
+.row .subrow1 .subcol1 .desc {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.row .subrow2 {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+}
+
+.row .subrow2 :hover {
+  background-color: #335eeb;
+  color: white;
+}
+
+.row .subrow2 .subcol2 {
+  background-color: rgba(149, 206, 244, 0.1);
+  border-style: ridge;
+  border-width: 3px;
+  margin: 1rem 2rem;
+  height: inherit;
+  width: 50%;
+}
+
+.row .subrow2 .subcol2 .heading {
+  font-size: 28px;
+  padding: 10px;
+}
+
+.row .subrow2 .subcol2 .desc {
+  font-size: 18px;
+  padding: 10px;
+}
+/*# sourceMappingURL=dept.css.map */
