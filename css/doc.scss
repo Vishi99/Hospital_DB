@@ -87,7 +87,6 @@
         }
         
       }
-    }
     .right{
         height: inherit;
         align-content: center;
@@ -96,6 +95,24 @@
         img{
             height: inherit;
             width: 500px;
+        }
+    }
+    .left{
+        .appt{
+            .p-id, .a-date, .a-time{
+                font-size: 15px;
+                padding: 1px 0 1px 5px;
+                margin: 0.5rem 0 0.25rem 5rem;
+                height: 25px;
+                width: 250px;
+                border-radius: 5px;
+                border-style: solid;
+                border-width: 1px;
+            }
+        }
+        h1{
+            font-size: 40px;
+            margin: 0 0 0 2rem;
         }
     }
 }
@@ -121,6 +138,22 @@
   .right{
       width: 50%;
       padding: 5rem;
-      
+      .p-id, .a-date, .a-time{
+        font-size: 15px;
+        padding: 1px 0 1px 5px;
+        margin: 0.5rem 0 0.25rem 5rem;
+        height: 25px;
+        width: 250px;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+      }
+      h1{
+        font-size: 40px;
+        margin: 0 0 0 2rem;
+      }
+      h2{
+          margin: 0 0 0 5rem;
+      }
   }
 }

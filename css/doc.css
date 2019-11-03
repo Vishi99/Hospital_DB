@@ -112,24 +112,6 @@
   font-size: 20px;
 }
 
-.details .left .login, .appointment .left .login {
-  height: 70px;
-  border-radius: 10px;
-}
-
-.details .left .login button, .appointment .left .login button {
-  width: 150px;
-  margin: 15px 0 0 0;
-  padding: 0.5rem;
-  font-size: 25px;
-  border-radius: 10px;
-  background-color: rgba(43, 143, 230, 0.3);
-}
-
-.details .left .login :hover, .appointment .left .login :hover {
-  background-color: #0752f5;
-}
-
 .details .right, .appointment .right {
   height: inherit;
   -ms-flex-line-pack: center;
@@ -143,6 +125,22 @@
 .details .right img, .appointment .right img {
   height: inherit;
   width: 500px;
+}
+
+.details .left .appt .p-id, .details .left .appt .a-date, .details .left .appt .a-time, .appointment .left .appt .p-id, .appointment .left .appt .a-date, .appointment .left .appt .a-time {
+  font-size: 15px;
+  padding: 1px 0 1px 5px;
+  margin: 0.5rem 0 0.25rem 5rem;
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.details .left h1, .appointment .left h1 {
+  font-size: 40px;
+  margin: 0 0 0 2rem;
 }
 
 .patients, .equipment {
@@ -183,13 +181,23 @@
   padding: 5rem;
 }
 
-.patients .right h1, .equipment .right h1 {
-  font-size: 50px;
-  padding: 0.5rem 0rem;
+.patients .right .p-id, .patients .right .a-date, .patients .right .a-time, .equipment .right .p-id, .equipment .right .a-date, .equipment .right .a-time {
+  font-size: 15px;
+  padding: 1px 0 1px 5px;
+  margin: 0.5rem 0 0.25rem 5rem;
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
 }
 
-.patients .right p, .equipment .right p {
-  text-align: justify;
-  font-size: 20px;
+.patients .right h1, .equipment .right h1 {
+  font-size: 40px;
+  margin: 0 0 0 2rem;
+}
+
+.patients .right h2, .equipment .right h2 {
+  margin: 0 0 0 5rem;
 }
 /*# sourceMappingURL=doc.css.map */
