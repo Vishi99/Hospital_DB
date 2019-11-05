@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+  <link rel="stylesheet" href= "css/login.css">
+</head>
+<body>
+
+	<nav class="navbar">
+		<a href="index.html" class="logo">
+			<img src="imgs/logo.png">
+		</a>
+
+		<ul class="elements">
+			<a href="index.html" class="list">
+				<li class = "list-ele">Home</li>
+			</a>
+			<a href="dept.html" class="list">
+				<li class = "list-ele">Departments</li>
+			</a>
+			<a href="contact.html" class="list">
+				<li class = "list-ele">Contact Us</li>
+			</a>
+		</ul>	
+	</nav>
+
+	<div class="welcome">
+		<div class="wel-left">
+			<h1 class="care">Login</h1>
+			<form id="login-form" class="login">
+                <input id="su-name" name="UserID" type="text" class="user-name" placeholder="UserID">
+                <select id="su-type" name="UserType" class="user-type">
+                    <option value="Patient" class="option">Patient</option>
+                    <option value="Doctor" class="option">Doctor</option>
+                    <option value="Admin" class="option">Admin</option>
+                </select>
+                <br>
+                <input id="su-password" name="Password" type="password" class="pass" placeholder="Password">
+                <br>
+                <div class="btn">
+					<input name="sub-btn" type="submit" class="submit" value="Login">
+				</div>
+				<span class="wrong">Wrong User credentials!!</span>
+            </form>
+		</div>
+		<div class="wel-right">
+			<img src="imgs/ability_img.png" class="welcome-img">
+		</div>
+	</div>
+
+	<footer>
+		<div class="foot">
+			Website by Vishak
+		</div>
+	</footer>
+	
+	<script
+	src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous">
+	</script>
+	<script>
+		$("span.wrong").hide()
+		const login = document.getElementById('login-form');
+		login.onsubmit = e => {
+			e.preventDefault();
+			const name = document.getElementById('su-name').value;
+			const usertype = document.getElementById('su-type').value;
+			const password = document.getElementById('su-password').value;
+			$.ajax({
+				type: 'POST',
+				url: "/auth",
+				data: JSON.stringify({
+					"UserID": name,
+					"UserType": usertype,
+					"Password": password,
+				}),
+				dataType: "json",
+				contentType: "application/json",
+				error: function (e) {
+					console.log(e.responseText);
+					//alert("Wrong credentials")
+					$("span.wrong").show()
+				},
+				success: function (e) {
+					//console.log("Successfull");
+					//alert("Successfully logged in")
+					const redir = usertype.toLowerCase();
+					const r_page = "http://localhost:3000/".concat(redir, ".html")
+					const cook = "username = ".concat(name, "; expires = Wed, 6 Nov 2019 3:00:00 UTC; path= ", r_page);
+					document.cookie = cook;
+					window.location.assign(r_page)
+				},
+			});
+			return false;
+		}
+	</script>
+</body>
+</html>

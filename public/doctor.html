@@ -10,7 +10,7 @@
         <img src="imgs/logo.png" />
       </a>
       <ul class="elements">
-        <li class="list-ele">Welcome Dr. XYZ</li>
+        <li class="list-ele">Welcome Dr. <span id="doc-name">XYZ</span></li>
         <a href="index.html" class="list">
           <button class="logout">Logout</button>
         </a>
@@ -75,5 +75,18 @@
         Website by Vishak
       </div>
     </footer>
+
+    <script
+	    src="https://code.jquery.com/jquery-3.4.1.min.js"
+	    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	    crossorigin="anonymous">
+    </script>
+
+    <script>
+        const x = document.cookie.search("username");
+        const str = document.cookie.substring(x+9, document.cookie.length);
+        console.log(str)
+        $("#doc-name").text(str);
+    </script>
   </body>
 </html>

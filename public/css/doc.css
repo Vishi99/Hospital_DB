@@ -49,6 +49,11 @@
   background-color: #407be1;
 }
 
+.doc-name {
+  font-size: 20px;
+  color: black;
+}
+
 .list-ele {
   margin: 1rem 0 0 0;
   font-size: 20px;
