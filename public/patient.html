@@ -4,7 +4,7 @@
 	<title>Patient</title>
   <link rel="stylesheet" href= "css/patient.css">
 </head>
-<body>
+<body onload="init_pat()">
 	<nav class="navbar">
 		<a href="index.html" class="logo">
 			<img src="imgs/logo.png">
@@ -19,7 +19,15 @@
     
     <div class="details">
             <div class="left">
-                
+                <h1>
+                    Your Details: 
+                </h1>
+                Patient Name :  <span id="p_name"></span><br>
+                Patient Id :  <span id="p_id"></span><br>
+                Assigned Doctor :  <span id="p_doc"></span><br>
+                Address :  <span id="p_add"></span><br>
+                Patient Illness :  <span id="p_illness"></span><br>
+                Patient Medication :  <span id="p_med"></span>
             </div>
             <div class="right">
                 <img src="imgs/banner_img.png" class="welcome-img">
@@ -31,19 +39,47 @@
                 <img src="imgs/ability_img.png" class="welcome-img">
             </div>
             <div class="right">
-            
+                <h1>
+                    Upcoming Appointment & Procedures: 
+                </h1>
+                <h2>
+                    Appointment
+                </h2>
+                Doctor : <span id="app_doc"></span><br>
+                Date : <span id="app_date"></span><br>
+                Time : <span id="app_time"></span><br>
+                <h2>
+                    Procedures
+                </h2>
+                Name of Procedure : <span id="pro_name"></span><br>
+                Date : <span id="pro_date"></span><br>
+                Time : <span id="pro_time"></span><br>
             </div>
         </div>
     
         <div class="bills">
                 <div class="left">
-                    
+                    <h1>
+                        Bills Due 
+                    </h1>
+                    <span class="no-bill">
+                        <h2>
+                            You Have no Bills Due :)
+                        </h2>
+                    </span>
+                    <span class="yes-bill">
+                        No. of Procedures : <span id="bill_proc"></span><br>
+                        Total_Cost : <span id="bill_cst"></span><br>
+                        Due_Date : <span id="bill_date"></span><br>
+                        <button class="pay">Pay Bill</button>
+                    </span>
                 </div>
                 <div class="right">
                     <img src="imgs/top_service.png" class="welcome-img">
                 </div>
+
             </div>
-    
+
             <div class="review">
                 <div class="left">
                     <img src="imgs/service.png" class="welcome-img">
@@ -52,13 +88,11 @@
                     <h1 class="prompt">
                         Write your review here :)
                     </h1>
-                    <form action="#" class="rev">
-                        <textarea class="p-review" name="message" rows="10" cols="30" placeholder="I love your service :)"></textarea>
-                        <a href="#" class="submit">
-                            <button>
-                                Submit
-                            </button>
-                        </a>
+                    <form id = "rev-form" class="rev">
+                        <textarea id="rev-text" class="p-review" name="message" rows="10" cols="30" placeholder="I love your service :)"></textarea>
+                        <button class="sub-btn", type="submit">
+                            Submit
+                        </button>
                     </form>
                 </div>
             </div>
@@ -79,9 +113,148 @@
     <script>
         const x = document.cookie.search("username");
         const str = document.cookie.substring(x+9, document.cookie.length);
-        console.log(str)
+        //console.log(str)
         $("#patient-name").text(str);
-    </script>
+        $("span.no-bill").hide();
 
+        $("button.pay").click(function(){
+            $.ajax({
+                type: 'POST',
+				url: "/billpay",
+				data: JSON.stringify({
+					"patient_id": str,
+				}),
+				dataType: "json",
+				contentType: "application/json",
+				error: function (e) {
+					console.log(e.responseText);	
+				},
+				success: function (e) {
+					alert("You have paid all the bills");
+                    $("span.yes-bill").hide();
+                    $("span.no-bill").show();
+			    }
+            });
+        });
+        const login = document.getElementById('rev-form');
+		login.onsubmit = e => {
+            e.preventDefault();
+            const msg = document.getElementById("rev-text").value;
+            //alert(msg);
+            $.ajax({
+                type: 'POST',
+				url: "/review",
+				data: JSON.stringify({
+					"patient_id": str,
+					"review":msg
+				}),
+				dataType: "json",
+				contentType: "application/json",
+				error: function (e) {
+					console.log(e.responseText);	
+				},
+				success: function (e) {
+					alert("Review Successfully Submitted")
+				}
+            });
+            return false;
+        }
+    </script>
+    <script>    
+        function init_pat(){
+            $.ajax({
+                type: 'GET',
+                url: "/p_details",
+                error: function (e) {
+					console.log(e.responseText);	
+				},
+				success: function (result) {
+                    const data = result[0];
+                    $("#patient-name").text(data["P_Name"]);
+                    $("#p_name").text(data["P_Name"]);
+                    $("#p_doc").text(data["Doc_Id"]);
+                    $("#p_add").text(data["Address"]);
+                    $("#p_id").text(data["P_Id"]);
+				}
+            });
+            $.ajax({
+                type: 'GET',
+                url: "/p_record",
+                error: function (e) {
+					console.log(e.responseText);	
+				},
+				success: function (result) {
+                    const data = result[0];
+                    console.log(data)
+                    $("#p_illness").text(data["Illness"]);
+                    $("#p_med").text(data["Medicines"]);
+				}
+            });
+            $.ajax({
+                type: 'GET',
+                url: "/p_appoint",
+                error: function (e) {
+					console.log(e.responseText);	
+				},
+				success: function (result) {
+                    const data = result[0];
+                    console.log(data)
+                    $("#app_doc").text(data["D_Id"]);
+                    $("#app_date").text(data["Date"].substring(0, 10));
+                    $("#app_time").text(data["Time"]);
+				}
+            });
+            $.ajax({
+                type: 'GET',
+                url: "/p_proced",
+                error: function (e) {
+					console.log(e.responseText);	
+				},
+				success: function (result) {
+                    const data = result[0];
+                    console.log(data)
+                    $("#pro_name").text(data["Name"]);
+                    $("#pro_date").text(data["Date"].substring(0, 10));
+                    $("#pro_time").text(data["Time"]);
+				}
+            });
+            $.ajax({
+                type: 'GET',
+                url: "/p_proced",
+                error: function (e) {
+					console.log(e.responseText);	
+				},
+				success: function (result) {
+                    const data = result[0];
+                    console.log(data)
+                    $("#pro_name").text(data["Name"]);
+                    $("#pro_date").text(data["Date"].substring(0, 10));
+                    $("#pro_time").text(data["Time"]);
+				}
+            });
+            $.ajax({
+                type: 'GET',
+                url: "/p_bill",
+                error: function (e) {
+                    console.log(e.responseText);
+				},
+				success: function (result) {
+                    const data = result[0];
+                    console.log(data)
+                    if(jQuery.isEmptyObject(data)){
+                        $("span.yes-bill").hide();
+                        $("span.no-bill").show();	
+                    }
+                    else{
+                        $("#bill_proc").text(data["No_of_Procedures"]);
+                        $("#bill_cst").text("Rs. ".concat(data["Total_Cost"]));
+                        $("#bill_date").text(data["Date_of_Payment"].substring(0, 10));
+                    }
+                    
+				}
+            });
+            return false;
+        }
+    </script>
 </body>
 </html>

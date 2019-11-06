@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  padding: 1rem;
+  height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(144, 199, 247, 0.3);
+}
+
+.navbar .elements {
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+}
+
+.logo-ele {
+  width: 170px;
+}
+
+.list {
+  text-decoration: none;
+  margin: 0.5rem;
+}
+
+.list :hover {
+  background-color: #407be1;
+}
+
+.list-ele {
+  font-size: 20px;
+  color: black;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.foot {
+  height: 20px;
+  padding: 0.5rem;
+  font-size: 20px;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  background-color: #3a11f4;
+  color: white;
+  text-align: center;
+}
+
+.welcome {
+  height: 585px;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../imgs/banner_bg.png");
+}
+
+.welcome .wel-left {
+  width: 50%;
+  padding: 5rem 2rem;
+  margin: 0 0 5rem 5rem;
+}
+
+.welcome .wel-left h1 {
+  font-size: 50px;
+}
+
+.welcome .wel-left p {
+  font-size: 23px;
+}
+
+.welcome .wel-right {
+  height: inherit;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+.welcome .wel-right img {
+  height: auto;
+  width: 500px;
+}
+
+.container {
+  padding: 0rem 10rem;
+  font-size: 23px;
+}
+
+.container h1 {
+  font-size: 45px;
+}
+
+.container div {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 23px;
+  border-style: ridge;
+  border-radius: 10px;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  width: 700px;
+  height: fit-content;
+}
+/*# sourceMappingURL=contact.css.map */

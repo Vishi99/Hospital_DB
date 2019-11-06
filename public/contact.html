@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body onload="load_rev()">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="imgs/logo.png" />
+      </a>
+
+      <ul class="elements">
+        <a href="index.html" class="list">
+          <li class="list-ele">Home</li>
+        </a>
+        <a href="dept.html" class="list">
+          <li class="list-ele">Departments</li>
+        </a>
+        <a href="contact.html" class="list">
+          <li class="list-ele">Contact Us</li>
+        </a>
+      </ul>
+    </nav>
+
+    <div class="welcome">
+      <div class="wel-left">
+        <h1 class="care">Contact Us @</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla cumque
+          debitis a tempore cupiditate error dolor, asperiores eum suscipit
+          voluptatum blanditiis non, eaque earum nostrum sunt consectetur
+          pariatur aperiam harum?
+        </p>
+      </div>
+      <div class="wel-right">
+        <img src="imgs/service.png" class="welcome-img" />
+      </div>
+    </div>
+
+    <div class="container">
+      <h1 class="rev">
+        Reviews by Patients
+      </h1>
+      <div class="r1"><span class="review1"> </span></div>
+      <div class="r2"><span class="review2"> </span></div>
+      <div class="r3"><span class="review3"> </span></div>
+      <div class="r4"><span class="review4"> </span></div>
+      <div class="r5"><span class="review5"> </span></div>
+    </div>
+
+    <footer>
+      <div class="foot">
+        Website by Vishak
+      </div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function load_rev() {
+        $.ajax({
+          type: "GET",
+          url: "/reviews",
+          error: function(e) {
+            console.log(e.responseText);
+          },
+          success: function(result) {
+            var users = [];
+            var revs = [];
+            for (ele in result) {
+              users.push(ele);
+              revs.push(result[ele]);
+            }
+            for(var i = 0; i < 5; i++){
+                var dv = 'div.rev'.concat((i+1).toString())
+                var sp = 'span.review'.concat((i+1).toString())
+                $(dv).css("display", "hidden")
+                $(sp).css("display", "hidden")
+            }
+            for (var i = Math.min(users.length-1, 5); i >=0 ; i--) {
+                var sp = 'span.review'.concat((i+1).toString())
+                console.log(sp)
+                $(sp).text(users[i].concat(" says: \n\n" ,revs[i]))
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

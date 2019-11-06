@@ -49,6 +49,11 @@
   background-color: #407be1;
 }
 
+.doc-name {
+  font-size: 20px;
+  color: black;
+}
+
 .list-ele {
   margin: 1rem 0 0 0;
   font-size: 20px;
@@ -57,9 +62,13 @@
   border-radius: 10px;
 }
 
-.patient-name {
-  font-size: 20px;
-  color: black;
+.navbar button {
+  width: 150px;
+  margin: 0.5rem 0 0 0;
+  padding: 0.5rem;
+  font-size: 25px;
+  border-radius: 10px;
+  background-color: #5063f2;
 }
 
 .foot {
@@ -74,16 +83,7 @@
   text-align: center;
 }
 
-.navbar button {
-  width: 150px;
-  margin: 0.5rem 0 0 0;
-  padding: 0.5rem;
-  font-size: 25px;
-  border-radius: 10px;
-  background-color: #5063f2;
-}
-
-.details, .bills {
+.details, .appointment {
   height: 400px;
   padding: 3rem;
   display: -webkit-box;
@@ -101,51 +101,23 @@
   background-image: url("../imgs/banner_bg.png");
 }
 
-.details .left, .bills .left {
+.details .left, .appointment .left {
   width: 50%;
   padding: 5rem;
   margin: 5rem 0 0 0;
-  font-size: 25px;
 }
 
-.details .left h1, .bills .left h1 {
+.details .left h1, .appointment .left h1 {
   font-size: 50px;
   padding: 0.5rem 0rem;
 }
 
-.details .left p, .bills .left p {
+.details .left p, .appointment .left p {
   text-align: justify;
   font-size: 20px;
 }
 
-.details .left .login, .bills .left .login {
-  height: 70px;
-  border-radius: 10px;
-}
-
-.details .left .login button, .bills .left .login button {
-  width: 150px;
-  margin: 15px 0 0 0;
-  padding: 0.5rem;
-  font-size: 25px;
-  border-radius: 10px;
-  background-color: rgba(43, 143, 230, 0.3);
-}
-
-.details .left .login :hover, .bills .left .login :hover {
-  background-color: #0752f5;
-}
-
-.details .left .pay, .bills .left .pay {
-  width: 150px;
-  margin: 15px 0 0 0;
-  padding: 0.5rem;
-  font-size: 25px;
-  border-radius: 10px;
-  background-color: rgba(43, 143, 230, 0.3);
-}
-
-.details .right, .bills .right {
+.details .right, .appointment .right {
   height: inherit;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -155,12 +127,28 @@
   width: 50%;
 }
 
-.details .right img, .bills .right img {
+.details .right img, .appointment .right img {
   height: inherit;
   width: 500px;
 }
 
-.procedures, .review {
+.details .left .appt .p-id, .details .left .appt .a-date, .details .left .appt .a-time, .appointment .left .appt .p-id, .appointment .left .appt .a-date, .appointment .left .appt .a-time {
+  font-size: 15px;
+  padding: 1px 0 1px 5px;
+  margin: 0.5rem 0 0.25rem 5rem;
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.details .left h1, .appointment .left h1 {
+  font-size: 40px;
+  margin: 0 0 0 2rem;
+}
+
+.patients, .equipment {
   height: 400px;
   padding: 6rem;
   display: -webkit-box;
@@ -178,7 +166,7 @@
   background-image: url("../imgs/about_bg.png");
 }
 
-.procedures .left, .review .left {
+.patients .left, .equipment .left {
   height: inherit;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -188,49 +176,33 @@
   width: 50%;
 }
 
-.procedures .left img, .review .left img {
+.patients .left img, .equipment .left img {
   height: inherit;
   width: 500px;
 }
 
-.procedures .right, .review .right {
+.patients .right, .equipment .right {
   width: 50%;
   padding: 5rem;
-  font-size: 20px;
 }
 
-.procedures .right h1, .review .right h1 {
-  font-size: 50px;
-  padding: 0.5rem 0rem;
-}
-
-.procedures .right p, .review .right p {
-  text-align: justify;
-  font-size: 20px;
-}
-
-.procedures .right h2, .review .right h2 {
-  font-size: 30px;
-  padding: 0.5rem 0rem;
-}
-
-.procedures .p-review, .review .p-review {
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
-  padding: 10px;
-  height: 260px;
-  width: 580px;
-  border-radius: 10px;
+.patients .right .p-id, .patients .right .a-date, .patients .right .a-time, .equipment .right .p-id, .equipment .right .a-date, .equipment .right .a-time {
+  font-size: 15px;
+  padding: 1px 0 1px 5px;
+  margin: 0.5rem 0 0.25rem 5rem;
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
   border-style: solid;
-  font-size: 20px;
+  border-width: 1px;
 }
 
-.procedures button, .review button {
-  width: 150px;
-  margin: 15px 0 0 0;
-  padding: 0.5rem;
-  font-size: 25px;
-  border-radius: 10px;
-  background-color: rgba(43, 143, 230, 0.3);
+.patients .right h1, .equipment .right h1 {
+  font-size: 40px;
+  margin: 0 0 0 2rem;
 }
-/*# sourceMappingURL=patient.css.map */
+
+.patients .right h2, .equipment .right h2 {
+  margin: 0 0 0 5rem;
+}
+/*# sourceMappingURL=admin.css.map */
