@@ -87,7 +87,7 @@
 					//alert("Successfully logged in")
 					const redir = usertype.toLowerCase();
 					const r_page = "http://localhost:3000/".concat(redir, ".html")
-					const cook = "username = ".concat(name, "; expires = Wed, 7 Nov 2019 3:00:00 UTC; path= ", r_page);
+					const cook = "username = ".concat(name, "; expires = Wed, 18 Nov 2019 5:00:00 UTC; path= ", r_page);
 					document.cookie = cook;
 					window.location.assign(r_page)
 				},

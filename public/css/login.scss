@@ -1,129 +1,127 @@
-*{
-    padding: 0;
-    margin: 0;
-    
-  }
-  
-  .navbar{
-    padding: 1rem;
-    height: 50px;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: rgba(144, 199, 247, 0.3);
-  }
-  
-  .navbar .elements{
-    align-items: space-between;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-  }
-  
-  .logo-ele{
-    width: 170px;
-  }
-  
-  .list{
-    text-decoration: none;
-    margin: 0.5rem;
-  }
-  
-  .list :hover{
-    background-color: rgb(64, 123, 225);
-  }
-  
-  .list-ele{ 
-    font-size: 20px;
-    color: black;
-    padding: 1rem;
-    border-radius: 10px;
-  }
-  
-  .foot{
-    height: 20px;
-    padding: 0.5rem;
-    font-size: 20px;
-    left: 0;
-    bottom: 0;
-    width: auto;
-    background-color: rgb(58, 17, 244);
-    color: white;
-    text-align: center;
-  }
+* {
+  padding: 0;
+  margin: 0;
+}
 
-  .welcome{
-      height: 585px;
-      padding: 3rem;
-      display: flex;
-      flex-direction: row;
-      align-content: center;
-      align-items: center;
-      background-image: url("../imgs/banner_bg.png");
-      .wel-left{
-          width: 50%;
-          padding: 5rem;
-          margin: 0 0 5rem 5rem;
-          .wrong{
-            height: fit-content;
-            font-size: 20px;
-            color: blue;
-          }
-          .care{
-            font-size: 40px;
-          }
-          .login{
-            .user-name{
-                font-size: 15px;
-                padding: 1px 0 1px 5px;
-                margin: 0.5rem 0 0.25rem 0;
-                height: 25px;
-                width: 250px;
-                border-radius: 5px;
-                border-style: solid;
-                border-width: 1px;
-            }
-            .pass{
-                font-size: 15px;
-                padding: 1px 0 1px 5px;
-                margin: 0.25rem 0 0 0;
-                height: 25px;
-                width: 250px;
-                border-radius: 5px;
-                border-style: solid;
-                border-width: 1px;
-            }
-            .user-type{
-                height: 25px;
-                width: 100px;
-                font-size: 15px;
-                margin: 0.25rem 0 0 0.5rem;
-            }
-            .btn{
-                .submit{
-                    width: 150px;
-                    margin: 0.5rem 0 0.5rem 0;
-                    padding: 0.5rem;
-                    font-size: 25px;
-                    border-radius: 10px;
-                    background-color: rgba(43, 143, 230, 0.3);
-                }
-                :hover{
-                    background-color: rgb(7, 82, 245);
-                }
-            }
+.navbar {
+  padding: 1rem;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(144, 199, 247, 0.3);
+}
+
+.navbar .elements {
+  align-items: space-between;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.logo-ele {
+  width: 170px;
+}
+
+.list {
+  text-decoration: none;
+  margin: 0.5rem;
+}
+
+.list :hover {
+  background-color: rgb(64, 123, 225);
+}
+
+.list-ele {
+  font-size: 20px;
+  color: black;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.foot {
+  height: 20px;
+  padding: 0.5rem;
+  font-size: 20px;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  background-color: rgb(58, 17, 244);
+  color: white;
+  text-align: center;
+}
+
+.welcome {
+  height: 585px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  background-image: url("../imgs/banner_bg.png");
+  .wel-left {
+    width: 50%;
+    padding: 5rem;
+    margin: 0 0 5rem 5rem;
+    .wrong {
+      height: fit-content;
+      font-size: 20px;
+      color: blue;
+    }
+    .care {
+      font-size: 40px;
+    }
+    .login {
+      .user-name {
+        font-size: 15px;
+        padding: 1px 0 1px 5px;
+        margin: 0.5rem 0 0.25rem 0;
+        height: 25px;
+        width: 250px;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+      }
+      .pass {
+        font-size: 15px;
+        padding: 1px 0 1px 5px;
+        margin: 0.25rem 0 0 0;
+        height: 25px;
+        width: 250px;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+      }
+      .user-type {
+        height: 25px;
+        width: 100px;
+        font-size: 15px;
+        margin: 0.25rem 0 0 0.5rem;
+      }
+      .btn {
+        .submit {
+          width: 150px;
+          margin: 0.5rem 0 0.5rem 0;
+          padding: 0.5rem;
+          font-size: 25px;
+          border-radius: 10px;
+          background-color: rgba(43, 143, 230, 0.3);
+        }
+        :hover {
+          background-color: rgb(7, 82, 245);
         }
       }
-      .wel-right{
-          height: inherit;
-          align-content: center;
-          align-items: center;
-          width: 50%;
-          img{
-              height: auto;
-              width: 600px;
-          }
-      }
+    }
   }
-  
+  .wel-right {
+    height: inherit;
+    align-content: center;
+    align-items: center;
+    width: 50%;
+    img {
+      height: auto;
+      width: 600px;
+    }
+  }
+}

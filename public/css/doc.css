@@ -83,7 +83,8 @@
   text-align: center;
 }
 
-.details, .appointment {
+.details,
+.appointment {
   height: 400px;
   padding: 3rem;
   display: -webkit-box;
@@ -101,38 +102,28 @@
   background-image: url("../imgs/banner_bg.png");
 }
 
-.details .left, .appointment .left {
+.details .left,
+.appointment .left {
   width: 50%;
   padding: 5rem;
   margin: 5rem 0 0 0;
+  font-size: 25px;
 }
 
-.details .left h1, .appointment .left h1 {
+.details .left h1,
+.appointment .left h1 {
   font-size: 50px;
   padding: 0.5rem 0rem;
 }
 
-.details .left p, .appointment .left p {
+.details .left p,
+.appointment .left p {
   text-align: justify;
   font-size: 20px;
 }
 
-.details .right, .appointment .right {
-  height: inherit;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 50%;
-}
-
-.details .right img, .appointment .right img {
-  height: inherit;
-  width: 500px;
-}
-
-.details .left .appt .p-id, .details .left .appt .a-date, .details .left .appt .a-time, .appointment .left .appt .p-id, .appointment .left .appt .a-date, .appointment .left .appt .a-time {
+.details .left .a-type,
+.appointment .left .a-type {
   font-size: 15px;
   padding: 1px 0 1px 5px;
   margin: 0.5rem 0 0.25rem 5rem;
@@ -143,12 +134,57 @@
   border-width: 1px;
 }
 
-.details .left h1, .appointment .left h1 {
+.details .left button,
+.appointment .left button {
+  width: 80px;
+  margin: 0.5rem 0 0.25rem 5rem;
+  padding: 0.5rem;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: rgba(43, 143, 230, 0.3);
+}
+
+.details .right,
+.appointment .right {
+  height: inherit;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+.details .right img,
+.appointment .right img {
+  height: inherit;
+  width: 500px;
+}
+
+.details .left .appt .p-id,
+.details .left .appt .a-date,
+.details .left .appt .a-time,
+.appointment .left .appt .p-id,
+.appointment .left .appt .a-date,
+.appointment .left .appt .a-time {
+  font-size: 15px;
+  padding: 1px 0 1px 5px;
+  margin: 0.5rem 0 0.25rem 5rem;
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.details .left h1,
+.appointment .left h1 {
   font-size: 40px;
   margin: 0 0 0 2rem;
 }
 
-.patients, .equipment {
+.patients,
+.equipment {
   height: 400px;
   padding: 6rem;
   display: -webkit-box;
@@ -166,7 +202,8 @@
   background-image: url("../imgs/about_bg.png");
 }
 
-.patients .left, .equipment .left {
+.patients .left,
+.equipment .left {
   height: inherit;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -174,19 +211,33 @@
       -ms-flex-align: center;
           align-items: center;
   width: 50%;
+  font-size: 25px;
 }
 
-.patients .left img, .equipment .left img {
+.patients .left img,
+.equipment .left img {
   height: inherit;
   width: 500px;
 }
 
-.patients .right, .equipment .right {
+.patients .left h1,
+.equipment .left h1 {
+  font-size: 50px;
+  padding: 0.5rem 0rem;
+}
+
+.patients .right,
+.equipment .right {
   width: 50%;
   padding: 5rem;
 }
 
-.patients .right .p-id, .patients .right .a-date, .patients .right .a-time, .equipment .right .p-id, .equipment .right .a-date, .equipment .right .a-time {
+.patients .right .p-id,
+.patients .right .a-date,
+.patients .right .a-time,
+.equipment .right .p-id,
+.equipment .right .a-date,
+.equipment .right .a-time {
   font-size: 15px;
   padding: 1px 0 1px 5px;
   margin: 0.5rem 0 0.25rem 5rem;
@@ -197,12 +248,24 @@
   border-width: 1px;
 }
 
-.patients .right h1, .equipment .right h1 {
+.patients .right button,
+.equipment .right button {
+  width: 80px;
+  margin: 0.5rem 0 0.25rem 5rem;
+  padding: 0.5rem;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: rgba(43, 143, 230, 0.3);
+}
+
+.patients .right h1,
+.equipment .right h1 {
   font-size: 40px;
   margin: 0 0 0 2rem;
 }
 
-.patients .right h2, .equipment .right h2 {
+.patients .right h2,
+.equipment .right h2 {
   margin: 0 0 0 5rem;
 }
 /*# sourceMappingURL=doc.css.map */

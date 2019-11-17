@@ -1,149 +1,139 @@
-*{
-    padding: 0;
-    margin: 0;
-    
-  }
-  
-  .navbar{
-    padding: 1rem;
-    height: 50px;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: rgba(144, 199, 247, 0.3);
-  }
-  
-  .navbar .elements{
-    align-items: space-between;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-  }
-  
-  .logo-ele{
-    width: 170px;
-  }
-  
-  .list{
-    text-decoration: none;
-    margin: 0.5rem;
-  }
-  
-  .list :hover{
-    background-color: rgb(64, 123, 225);
-  }
-
-  .doc-name{
-    font-size: 20px;
-    color: black;
-  }
-  
-  .list-ele{ 
-    margin: 1rem 0 0 0;
-    font-size: 20px;
-    color: black;
-    padding: 1rem;
-    border-radius: 10px;
-  }
-  
-  .navbar{
-    button{
-        width: 150px;
-        margin: 0.5rem 0 0 0;
-        padding: 0.5rem;
-        font-size: 25px;
-        border-radius: 10px;
-        background-color: rgb(80, 99, 242);
-    }
-  }
-  
-  .foot{
-    height: 20px;
-    padding: 0.5rem;
-    font-size: 20px;
-    left: 0;
-    bottom: 0;
-    width: auto;
-    background-color: rgb(58, 17, 244);
-    color: white;
-    text-align: center;
-  }
-
-  .details, .appointment{
-    height: 400px;
-    padding: 3rem;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    background-image: url("../imgs/banner_bg.png");
-    .left{
-        width: 50%;
-        padding: 5rem;
-        margin: 5rem 0 0 0;
-        h1{
-            font-size: 50px;
-            padding: 0.5rem 0rem;
-        }
-        p{
-            text-align: justify;
-            font-size: 20px;
-        }
-        
-      }
-    .right{
-        height: inherit;
-        align-content: center;
-        align-items: center;
-        width: 50%;
-        img{
-            height: inherit;
-            width: 500px;
-        }
-    }
-    .left{
-        .appt{
-            .p-id, .a-date, .a-time{
-                font-size: 15px;
-                padding: 1px 0 1px 5px;
-                margin: 0.5rem 0 0.25rem 5rem;
-                height: 25px;
-                width: 250px;
-                border-radius: 5px;
-                border-style: solid;
-                border-width: 1px;
-            }
-        }
-        h1{
-            font-size: 40px;
-            margin: 0 0 0 2rem;
-        }
-    }
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.patients, .equipment{
+.navbar {
+  padding: 1rem;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(144, 199, 247, 0.3);
+}
+
+.navbar .elements {
+  align-items: space-between;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.logo-ele {
+  width: 170px;
+}
+
+.list {
+  text-decoration: none;
+  margin: 0.5rem;
+}
+
+.list :hover {
+  background-color: rgb(64, 123, 225);
+}
+
+.doc-name {
+  font-size: 20px;
+  color: black;
+}
+
+.list-ele {
+  margin: 1rem 0 0 0;
+  font-size: 20px;
+  color: black;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.navbar {
+  button {
+    width: 150px;
+    margin: 0.5rem 0 0 0;
+    padding: 0.5rem;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: rgb(80, 99, 242);
+  }
+}
+
+.foot {
+  height: 20px;
+  padding: 0.5rem;
+  font-size: 20px;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  background-color: rgb(58, 17, 244);
+  color: white;
+  text-align: center;
+}
+
+.details,
+.appointment {
   height: 400px;
-  padding: 6rem;
+  padding: 3rem;
   display: flex;
   flex-direction: row;
   align-content: center;
   align-items: center;
-  background-image: url("../imgs/about_bg.png");
-  .left{
-      height: inherit;
-      align-content: center;
-      align-items: center;
-      width: 50%;
-      img{
-          height: inherit;
-          width: 500px;
-      }
+  background-image: url("../imgs/banner_bg.png");
+
+  .left {
+    width: 50%;
+    padding: 5rem;
+    margin: 5rem 0 0 0;
+    font-size: 25px;
+
+    h1 {
+      font-size: 50px;
+      padding: 0.5rem 0rem;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 20px;
+    }
+
+    .a-type {
+      font-size: 15px;
+      padding: 1px 0 1px 5px;
+      margin: 0.5rem 0 0.25rem 5rem;
+      height: 25px;
+      width: 250px;
+      border-radius: 5px;
+      border-style: solid;
+      border-width: 1px;
+    }
+
+    button {
+      width: 80px;
+      margin: 0.5rem 0 0.25rem 5rem;
+      padding: 0.5rem;
+      font-size: 16px;
+      border-radius: 10px;
+      background-color: rgba(43, 143, 230, 0.3);
+    }
   }
-  .right{
-      width: 50%;
-      padding: 5rem;
-      .p-id, .a-date, .a-time{
+
+  .right {
+    height: inherit;
+    align-content: center;
+    align-items: center;
+    width: 50%;
+
+    img {
+      height: inherit;
+      width: 500px;
+    }
+  }
+
+  .left {
+    .appt {
+
+      .p-id,
+      .a-date,
+      .a-time {
         font-size: 15px;
         padding: 1px 0 1px 5px;
         margin: 0.5rem 0 0.25rem 5rem;
@@ -153,12 +143,76 @@
         border-style: solid;
         border-width: 1px;
       }
-      h1{
-        font-size: 40px;
-        margin: 0 0 0 2rem;
-      }
-      h2{
-          margin: 0 0 0 5rem;
-      }
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 0 0 0 2rem;
+    }
+  }
+}
+
+.patients,
+.equipment {
+  height: 400px;
+  padding: 6rem;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  background-image: url("../imgs/about_bg.png");
+
+  .left {
+    height: inherit;
+    align-content: center;
+    align-items: center;
+    width: 50%;
+
+    img {
+      height: inherit;
+      width: 500px;
+    }
+
+    font-size: 25px;
+
+    h1 {
+      font-size: 50px;
+      padding: 0.5rem 0rem;
+    }
+  }
+
+  .right {
+    width: 50%;
+    padding: 5rem;
+
+    .p-id,
+    .a-date,
+    .a-time {
+      font-size: 15px;
+      padding: 1px 0 1px 5px;
+      margin: 0.5rem 0 0.25rem 5rem;
+      height: 25px;
+      width: 250px;
+      border-radius: 5px;
+      border-style: solid;
+      border-width: 1px;
+    }
+    button {
+      width: 80px;
+      margin: 0.5rem 0 0.25rem 5rem;
+      padding: 0.5rem;
+      font-size: 16px;
+      border-radius: 10px;
+      background-color: rgba(43, 143, 230, 0.3);
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 0 0 0 2rem;
+    }
+
+    h2 {
+      margin: 0 0 0 5rem;
+    }
   }
 }

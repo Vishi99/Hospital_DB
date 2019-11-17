@@ -204,20 +204,7 @@
                     $("#app_time").text(data["Time"]);
 				}
             });
-            $.ajax({
-                type: 'GET',
-                url: "/p_proced",
-                error: function (e) {
-					console.log(e.responseText);	
-				},
-				success: function (result) {
-                    const data = result[0];
-                    console.log(data)
-                    $("#pro_name").text(data["Name"]);
-                    $("#pro_date").text(data["Date"].substring(0, 10));
-                    $("#pro_time").text(data["Time"]);
-				}
-            });
+        
             $.ajax({
                 type: 'GET',
                 url: "/p_proced",

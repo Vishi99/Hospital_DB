@@ -1,92 +1,268 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Doctor</title>
-    <link rel="stylesheet" href="css/doc.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <a href="index.html" class="logo">
-        <img src="imgs/logo.png" />
+
+<head>
+  <title>Doctor</title>
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+
+<body onload="init_doc()">
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="imgs/logo.png" />
+    </a>
+    <ul class="elements">
+      <li class="list-ele">Welcome Dr. <span id="d-name">XYZ</span></li>
+      <a href="index.html" class="list">
+        <button class="logout">Logout</button>
       </a>
-      <ul class="elements">
-        <li class="list-ele">Welcome Dr. <span id="doc-name">XYZ</span></li>
-        <a href="index.html" class="list">
-          <button class="logout">Logout</button>
-        </a>
-      </ul>
-    </nav>
-    <div class="details">
-      <div class="left"></div>
-      <div class="right">
-        <img src="imgs/service.png" class="welcome-img" />
+    </ul>
+  </nav>
+  <div class="details">
+    <div class="left">
+      <h1>
+        Your Details:
+      </h1>
+      Doctor Name : <span id="doc_name"></span><br>
+      Qualifications : <span id="doc_qual"></span><br>
+      Contact Info : <span id="doc_cont"></span><br>
+      Department : <span id="doc_dept"></span>
+    </div>
+    <div class="right">
+      <img src="imgs/service.png" class="welcome-img" />
+    </div>
+  </div>
+
+  <div class="patients">
+    <div class="left">
+      <img src="imgs/banner_img.png" class="wel-img" />
+      <div class="p_dets">
+        <h1>
+          Patient Details:
+        </h1>
+        Patient Name: <span id="p_name"></span><br>
+        Patient Age: <span id="p_age"></span><br>
+        Patient Illness : <span id="p_illness"></span><br>
+        Patient Medication : <span id="p_med"></span>
       </div>
     </div>
-
-    <div class="patients">
-      <div class="left">
-        <img src="imgs/banner_img.png" class="welcome-img" />
-      </div>
-      <div class="right">
-          <h2>
-              Enter Patient ID
-          </h3>
-          <form action="#" class="p-details">
-              <input type="text" class="p-id" placeholder="PatientID">
-          </form>
-      </div> 
+    <div class="right">
+      <h2>
+        Enter Patient ID
+        </h3>
+        <form id="p_details" class="p-details">
+          <input id="p_id" name="p_details_q" type="text" class="p-id" placeholder="PatientID">
+        </form>
     </div>
+  </div>
 
-    <div class="appointment">
-            <div class="left">
-                <h1 class="book-apt">
-                    Make an Appointment
-                </h1>
-                <form action="#" class="appt">
-                    <input type="text" class="p-id" placeholder="PatientID"><br>
-                    <input type="date" class="a-date"><br>
-                    <input type="time" class="a-time"><br>
-                </form>
-            </div>
-            <div class="right">
-                <img src="imgs/ability_img.png" class="welcome-img">
-            </div>
-        </div>
-
-        <div class="equipment">
-            <div class="left">
-                <img src="imgs/top_service.png" class="welcome-img">
-            </div>
-            <div class="right">
-                    <h1 class="book-apt">
-                            Book an Equipment
-                        </h1>
-                        <form action="#" class="appt">
-                            <input type="text" class="p-id" placeholder="Equipment Name"><br>
-                            <input type="date" class="a-date"><br>
-                            <input type="time" class="a-time"><br>
-                        </form>
-            </div>
-        </div>
+  <div class="appointment">
+    <div class="left">
+      <h1 class="book-apt">
+        Make an Appointment/Book Procedure
+      </h1>
+      <form action="#" class="appt" id="appt_book">
+        <input id="p-id" type="text" class="p-id" placeholder="PatientID"><br>
+        <input id="a-date" type="date" class="a-date"><br>
+        <input id="a-time" type="time" class="a-time"><br>
+        <select id="a-type" name="app-type" class="a-type">
+          <option value="Appointment" class="option">Appointment</option>
+          <option value="Procedure" class="option">Procedure</option>
+        </select>
+        <input id="a-name" type="name" class="p-id" placeholder="Procedure name(if applicable)"><br>
+        <button class="sub-btn" type="submit" id="appt_sub">
+          Submit
+        </button>
+      </form>
     </div>
+    <div class="right">
+      <img src="imgs/ability_img.png" class="welcome-img">
+    </div>
+  </div>
 
-    <footer>
-      <div class="foot">
-        Website by Vishak
-      </div>
-    </footer>
+  <div class="equipment">
+    <div class="left">
+      <img src="imgs/top_service.png" class="welcome-img">
+    </div>
+    <div class="right">
+      <h1 class="book-apt">
+        Book an Equipment
+      </h1>
+      <form action="#" class="appt">
+        <input id="e-name" type="text" class="p-id" placeholder="Equipment Name"><br>
+        <select id="e-type" name="e-type" class="p-id">
+            <option value="Return" class="option">Return</option>
+            <option value="Borrow" class="option">Borrow</option>
+        </select><br>
+        <button class="sub-btn" type="submit" id="e_sub">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+  </div>
 
-    <script
-	    src="https://code.jquery.com/jquery-3.4.1.min.js"
-	    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-	    crossorigin="anonymous">
-    </script>
+  <footer>
+    <div class="foot">
+      Website by Vishak
+    </div>
+  </footer>
 
-    <script>
-        const x = document.cookie.search("username");
-        const str = document.cookie.substring(x+9, document.cookie.length);
-        console.log(str)
-        $("#doc-name").text(str);
-    </script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+
+  <script>
+    const x = document.cookie.search("username");
+    const str = document.cookie.substring(x + 9, document.cookie.length);
+    console.log(str)
+    $("#d-name").text(str);
+  </script>
+
+  <script>
+    function init_doc() {
+      $("div.p_dets").hide()
+      $.ajax({
+        type: 'GET',
+        url: "/doc_details",
+        error: function (e) {
+          console.log(e.responseText);
+        },
+        success: function (result) {
+          const data = result[0];
+          $("#d-name").text(data["Name"]);
+          $("#doc_name").text(data["Name"]);
+          $("#doc_qual").text(data["Qualifications"]);
+          $("#doc_cont").text(data["Contact"]);
+          $("#doc_dept").text(data["D_ID"]);
+        }
+      });
+    }
+  </script>
+
+  <script>
+    const getdata = document.getElementById('p_details');
+    getdata.onsubmit = e => {
+      e.preventDefault();
+      const msg = document.getElementById("p_id").value;
+      $.ajax({
+        type: 'POST',
+        url: "/getpdetails",
+        data: JSON.stringify({
+          "patient_id": msg
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        error: function (e) {
+          console.log(e.responseText);
+          alert("Sorry wrong patient ID or this patient isn't assigned to you")
+        },
+        success: function (result) {
+          console.log(result)
+          const data = result[0]
+          if (result.length != 0 && result[0]["Doc_Id"] == str) {
+            $.ajax({
+              type: 'POST',
+              url: "/getpdetails2",
+              data: JSON.stringify({
+                "patient_id": result[0]["P_Id"].toString()
+              }),
+              dataType: "json",
+              contentType: "application/json",
+              error: function (e) {
+                console.log(e.responseText);
+              },
+              success: function (result2) {
+                const data2 = result2[0];
+                console.log(data)
+                $("img.wel-img").hide()
+                $("div.p_dets").show()
+                $("#p_name").text(data["P_name"]);
+                $("#p_age").text(data["P_Age"]);
+                $("#p_illness").text(data2["Illness"]);
+                $("#p_med").text(data2["Medicines"]);
+              }
+            });
+          } 
+          else {
+            alert("Sorry wrong patient ID or this patient isn't assigned to you")
+          }
+        }
+      });
+      return false;
+    }
+  </script>
+  <script>
+    const appt = document.getElementById('appt_sub');
+    appt.onclick = e => {
+      e.preventDefault();
+      const pat = document.getElementById("p-id").value;
+      const adate = document.getElementById("a-date").value;
+      const atime = document.getElementById("a-time").value;
+      const atype = document.getElementById("a-type").value;
+      const aname = document.getElementById("a-name").value;
+      if(pat == "" || adate == "" || atime == "" || atype == "")
+      {
+        alert("Please Enter all details")
+        return false;
+      }
+      $.ajax({
+        type: 'POST',
+        url: "/getappointment",
+        data: JSON.stringify({
+          "patient_id": pat,
+          "app_date": adate,
+          "app_time": atime,
+          "app_type": atype,
+          "app_name": aname
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        error: function (e) {
+          console.log(e.responseText);
+          alert(e.responseText)
+        },
+        success: function (result) {
+          console.log(result)
+          alert("The slot has been booked successfully!")
+        }
+      });
+      return false;
+    }
+  </script>
+
+  <script>
+    const equi = document.getElementById('e_sub');
+    equi.onclick = e => {
+      e.preventDefault();
+      const name = document.getElementById("e-name").value;
+      const act = document.getElementById("e-type").value;
+      if(name==="")
+      {
+        alert("Please Enter all details")
+        return false;
+      }
+      $.ajax({
+        type: 'POST',
+        url: "/getequip",
+        data: JSON.stringify({
+          "equip_name": name,
+          "equip_act": act,
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        error: function (e) {
+          console.log(e.responseText);
+          alert("")
+        },
+        success: function (result) {
+          console.log(result)
+          alert("The Equipment has been Borrowed/Returned Successfully")
+        }
+      });
+      return false;
+    }
+  </script>
+
+</body>
 </html>
