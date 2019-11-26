@@ -44,9 +44,9 @@
       </h1>
       <div class="r1"><span class="review1"> </span></div>
       <div class="r2"><span class="review2"> </span></div>
-      <div class="r3"><span class="review3"> </span></div>
+      <!-- <div class="r3"><span class="review3"> </span></div>
       <div class="r4"><span class="review4"> </span></div>
-      <div class="r5"><span class="review5"> </span></div>
+      <div class="r5"><span class="review5"> </span></div> -->
     </div>
 
     <footer>
@@ -76,7 +76,7 @@
               users.push(ele);
               revs.push(result[ele]);
             }
-            for(var i = 0; i < 5; i++){
+            for(var i = 0; i < 2; i++){
                 var dv = 'div.rev'.concat((i+1).toString())
                 var sp = 'span.review'.concat((i+1).toString())
                 $(dv).css("display", "hidden")

@@ -43,7 +43,10 @@
         Patient Name: <span id="p_name"></span><br>
         Patient Age: <span id="p_age"></span><br>
         Patient Illness : <span id="p_illness"></span><br>
-        Patient Medication : <span id="p_med"></span>
+        Patient Medication : <span id="p_med"></span><br>
+        Last Appointment1 : <span id="ap1_last"></span><br>
+        Last Appointment2 : <span id="ap2_last"></span><br>
+        Last Appointment3 : <span id="ap3_last"></span>
       </div>
     </div>
     <div class="right">
@@ -91,8 +94,8 @@
       <form action="#" class="appt">
         <input id="e-name" type="text" class="p-id" placeholder="Equipment Name"><br>
         <select id="e-type" name="e-type" class="p-id">
-            <option value="Return" class="option">Return</option>
-            <option value="Borrow" class="option">Borrow</option>
+          <option value="Return" class="option">Return</option>
+          <option value="Borrow" class="option">Borrow</option>
         </select><br>
         <button class="sub-btn" type="submit" id="e_sub">
           Submit
@@ -130,13 +133,13 @@
         },
         success: function (result) {
           const data = result[0];
-          $("#d-name").text(data["Name"]);
+          $("#doc_dept").text(data["D_ID"]);
           $("#doc_name").text(data["Name"]);
           $("#doc_qual").text(data["Qualifications"]);
           $("#doc_cont").text(data["Contact"]);
-          $("#doc_dept").text(data["D_ID"]);
         }
       });
+
     }
   </script>
 
@@ -183,8 +186,27 @@
                 $("#p_med").text(data2["Medicines"]);
               }
             });
-          } 
-          else {
+            $.ajax({
+              type: 'POST',
+              url: "/getpdetails3",
+              data: JSON.stringify({
+                "patient_id": result[0]["P_Id"].toString()
+              }),
+              dataType: "json",
+              contentType: "application/json",
+              error: function (e) {
+                console.log(e.responseText);
+              },
+              success: function (result3) {
+                const data3 = result3[0];
+                console.log(data3)
+                $("#ap1_last").text(result3[0]["Date"].substring(0, 10))
+                $("#ap2_last").text(result3[1]["Date"].substring(0, 10))
+                $("#ap3_last").text(result3[2]["Date"].substring(0, 10))
+              }
+            });
+
+          } else {
             alert("Sorry wrong patient ID or this patient isn't assigned to you")
           }
         }
@@ -201,8 +223,7 @@
       const atime = document.getElementById("a-time").value;
       const atype = document.getElementById("a-type").value;
       const aname = document.getElementById("a-name").value;
-      if(pat == "" || adate == "" || atime == "" || atype == "")
-      {
+      if (pat == "" || adate == "" || atime == "" || atype == "") {
         alert("Please Enter all details")
         return false;
       }
@@ -237,8 +258,7 @@
       e.preventDefault();
       const name = document.getElementById("e-name").value;
       const act = document.getElementById("e-type").value;
-      if(name==="")
-      {
+      if (name === "") {
         alert("Please Enter all details")
         return false;
       }
@@ -253,7 +273,7 @@
         contentType: "application/json",
         error: function (e) {
           console.log(e.responseText);
-          alert("")
+          alert("Equipment not available")
         },
         success: function (result) {
           console.log(result)
@@ -265,4 +285,5 @@
   </script>
 
 </body>
+
 </html>

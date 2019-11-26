@@ -1,92 +1,357 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Admin</title>
-    <link rel="stylesheet" href="css/admin.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <a href="index.html" class="logo">
-        <img src="imgs/logo.png" />
+
+<head>
+  <title>Admin</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="imgs/logo.png" />
+    </a>
+    <ul class="elements">
+      <li class="list-ele">Welcome Admin</li>
+      <a href="index.html" class="list">
+        <button class="logout">Logout</button>
       </a>
-      <ul class="elements">
-        <li class="list-ele">Welcome Mr. <span id="admin-name">XYZ</span></li>
-        <a href="index.html" class="list">
-          <button class="logout">Logout</button>
-        </a>
-      </ul>
-    </nav>
-    <div class="details">
-      <div class="left"></div>
-      <div class="right">
-        <img src="imgs/service.png" class="welcome-img" />
-      </div>
+    </ul>
+  </nav>
+
+  <div class="apat">
+    <div class="left">
+      <h1>
+        Add/Update Patient Details
+      </h1>
+      <form action="#" class="add_pat" id="add_pat">
+        <input type="text" , name="name" , id="p_name" class="p-id" , placeholder="Patient Name"><br>
+        <input type="text" , name="ID" , id="p_id" class="p-id" , placeholder="Patient_Id"><br>
+        <input type="text" , name="dept" , id="p_age" class="p-id" , placeholder="Age"><br>
+        <input type="text" , name="address" , id="p_add" class="p-id" , placeholder="Address"><br>
+        <input type="text" , name="Qual" , id="p_cont" class="p-id" , placeholder="Contact No"><br>
+        <input type="text" , name="Cont" , id="p_doc" class="p-id" , placeholder="Doc_ID"><br>
+        <input type="text" , name="pass" , id="p_med" class="p-id" , placeholder="Medicines"><br>
+        <input type="text" , name="Qual" , id="p_ill" class="p-id" , placeholder="Illness"><br>
+        <input type="date" , name="Cont" , id="p_trt" class="p-id" , placeholder="Last_Treatment"><br>
+        <input type="text" , name="Qual" , id="p_pass" class="p-id" , placeholder="Password"><br>
+        <button class="sub-btn" type="submit" id="p_sub">
+          Submit
+        </button>
+      </form>
     </div>
-
-    <div class="patients">
-      <div class="left">
-        <img src="imgs/banner_img.png" class="welcome-img" />
-      </div>
-      <div class="right">
-          <h2>
-              Enter Patient ID
-          </h3>
-          <form action="#" class="p-details">
-              <input type="text" class="p-id" placeholder="PatientID">
-          </form>
-      </div> 
+    <div class="right">
+      <h1>
+        Remove Patient
+      </h1>
+      <form action="#" class="rem_pat" id="rem_pat">
+        <input id="pa_id" name="p_details_q" type="text" class="p-id" placeholder="Patient_Id">
+      </form>
+      <h1>
+        Generate Bill
+      </h1>
+      <form action="#" class="rem_pat" id="genbill">
+        <input id="pbill_id" name="p_details_q" type="text" class="p-id" placeholder="Patient_Id"><br>
+        <input id="procs" name="p_details" type="text" class="p-id" placeholder="No. of procedures"><br>
+        <input id="cost" name="p_details" type="text" class="p-id" placeholder="Total Cost"><br>
+        <input id="paydate" name="p_details" type="date" class="p-id" placeholder="Due Date"><br>
+        <button class="sub-btn" type="submit" id="bill_sub">
+          Generate
+        </button>
+      </form>
     </div>
+  </div>
 
-    <div class="appointment">
-            <div class="left">
-                <h1 class="book-apt">
-                    Make an Appointment
-                </h1>
-                <form action="#" class="appt">
-                    <input type="text" class="p-id" placeholder="PatientID"><br>
-                    <input type="date" class="a-date"><br>
-                    <input type="time" class="a-time"><br>
-                </form>
-            </div>
-            <div class="right">
-                <img src="imgs/ability_img.png" class="welcome-img">
-            </div>
-        </div>
-
-        <div class="equipment">
-            <div class="left">
-                <img src="imgs/top_service.png" class="welcome-img">
-            </div>
-            <div class="right">
-                    <h1 class="book-apt">
-                            Book an Equipment
-                        </h1>
-                        <form action="#" class="appt">
-                            <input type="text" class="p-id" placeholder="Equipment Name"><br>
-                            <input type="date" class="a-date"><br>
-                            <input type="time" class="a-time"><br>
-                        </form>
-            </div>
-        </div>
+  <div class="adoc">
+    <div class="left">
+      <h1>
+        Add/Update Doctor Details
+      </h1>
+      <form action="#" class="add_doc" id="add_doc">
+        <input type="text" , name="name" , id="doc_name" class="p-id" , placeholder="Doc_Name"><br>
+        <input type="text" , name="ID" , id="doc_id" class="p-id" , placeholder="Doc_ID"><br>
+        <input type="text" , name="dept" , id="doc_dep" class="p-id" , placeholder="Department"><br>
+        <input type="text" , name="address" , id="doc_add" class="p-id" , placeholder="Address"><br>
+        <input type="text" , name="Qual" , id="doc_qual" class="p-id" , placeholder="Qualifications"><br>
+        <input type="text" , name="Cont" , id="doc_cont" class="p-id" , placeholder="Contact No"><br>
+        <input type="text" , name="pass" , id="doc_pass" class="p-id" , placeholder="Password"><br>
+        <button class="sub-btn" type="submit" id="doc_sub">
+          Submit
+        </button>
+      </form>
     </div>
+    <div class="right">
+      <h1>
+        Remove Doctor
+      </h1>
+      <form action="#" class="rem_doc" id="rem_doc">
+        <input id="d_id" name="doc_details" type="text" class="p-id" placeholder="Doctor_Id">
+      </form>
+    </div>
+  </div>
 
-    <footer>
-      <div class="foot">
-        Website by Vishak
-      </div>
-    </footer>
+  <div class="aequ">
+    <div class="left">
+      <h1>
+        Add/Update Equipment Details
+      </h1>
+      <form action="#" class="add_equ" id="add_equ">
+        <input type="text" , name="name" , id="e_name" class="p-id" , placeholder="Name"><br>
+        <input type="date" , name="exp" , id="exp" class="p-id" , placeholder="Expiry Date"><br>
+        <input type="text" , name="dept" , id="avail" class="p-id" , placeholder="No. Available"><br>
+        <input type="text" , name="address" , id="quant" class="p-id" , placeholder="Total Quantity"><br>
+        <input type="text" , name="Qual" , id="price" class="p-id" , placeholder="Price"><br>
+        <input type="text" , name="Cont" , id="dept" class="p-id" , placeholder="Department"><br>
+        <button class="sub-btn" type="submit" id="e_sub">
+          Submit
+        </button>
+      </form>
+    </div>
+    <div class="right">
+      <h1>
+        Remove Equipment
+      </h1>
+      <form action="#" class="rem_equ" id="rem_equ">
+        <input id="e_id" name="e_details" type="text" class="p-id" placeholder="Equipment Name">
+      </form>
+    </div>
+  </div>
 
-    <script
-	    src="https://code.jquery.com/jquery-3.4.1.min.js"
-	    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-	    crossorigin="anonymous">
-    </script>
+  <footer>
+    <div class="foot">
+      Website by Vishak
+    </div>
+  </footer>
 
-    <script>
-        const x = document.cookie.search("username");
-        const str = document.cookie.substring(x+9, document.cookie.length);
-        console.log(str)
-        $("#doc-name").text(str);
-    </script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+
+  <script>
+    const genbill = document.getElementById("bill_sub");
+    genbill.onclick = e => {
+      e.preventDefault();
+
+      const pt_id = document.getElementById("pbill_id").value;
+      const procs = document.getElementById("procs").value;
+      const cost = document.getElementById("cost").value;
+      const paydate = document.getElementById("paydate").value;
+
+      $.ajax({
+        type: 'POST',
+        url: "/genbill",
+        data: JSON.stringify({
+          "pat_id": pt_id,
+          "procs": procs,
+          "cost": cost,
+          "paydate": paydate
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        error: function (e) {
+          console.log(e.responseText);
+          alert(e.responseText)
+        },
+        success: function (result) {
+          console.log(result)
+          alert("Recorded Successfully")
+        }
+      });
+      return false;
+    }
+  </script>
+
+  <script>
+    const equi = document.getElementById('e_sub');
+    equi.onclick = e => {
+      e.preventDefault();
+      const name = document.getElementById("e_name").value;
+      const exp = document.getElementById("exp").value;
+      const quant = document.getElementById("quant").value;
+      const avail = document.getElementById("avail").value;
+      const price = document.getElementById("price").value;
+      const dept = document.getElementById("dept").value;
+
+      $.ajax({
+        type: 'POST',
+        url: "/newequip",
+        data: JSON.stringify({
+          "equip_name": name,
+          "equip_exp": exp,
+          "equip_quant": quant,
+          "equip_avail": avail,
+          "equip_price": price,
+          "equip_dept": dept
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        error: function (e) {
+          console.log(e.responseText);
+          alert(e.responseText)
+        },
+        success: function (result) {
+          console.log(result)
+          alert("Recorded Successfully")
+        }
+      });
+      return false;
+    }
+
+    const rem_eq = document.getElementById("rem_equ");
+    rem_eq.onsubmit = e => {
+      e.preventDefault();
+      const e_name = document.getElementById("e_id").value;
+      $.ajax({
+        type: 'POST',
+        url: "/remequip",
+        data: JSON.stringify({
+          "equip_name": e_name,
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        error: function (e) {
+          console.log(e.responseText);
+          alert(e.responseText)
+        },
+        success: function (result) {
+          console.log(result)
+          alert("Recorded Successfully")
+        }
+      });
+      return false;
+    }
+  </script>
+
+  <script>
+    const doc = document.getElementById('doc_sub');
+    doc.onclick = e => {
+      e.preventDefault();
+      const name = document.getElementById("doc_name").value;
+      const id = document.getElementById("doc_id").value;
+      const dep = document.getElementById("doc_dep").value;
+      const add = document.getElementById("doc_add").value;
+      const qual = document.getElementById("doc_qual").value;
+      const cont = document.getElementById("doc_cont").value;
+      const pass = document.getElementById("doc_pass").value;
+      $.ajax({
+        type: 'POST',
+        url: "/newdoc",
+        data: JSON.stringify({
+          "doc_name": name,
+          "doc_id": id,
+          "doc_dep": dep,
+          "doc_add": add,
+          "doc_qual": qual,
+          "doc_cont": cont,
+          "doc_pass": pass
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        error: function (e) {
+          console.log(e.responseText);
+          alert(e.responseText)
+        },
+        success: function (result) {
+          console.log(result)
+          alert("Recorded Successfully")
+        }
+      });
+      return false;
+    }
+
+    const rem_dc = document.getElementById("rem_doc");
+    rem_dc.onsubmit = e => {
+      e.preventDefault();
+      const d_id = document.getElementById("d_id").value;
+      $.ajax({
+        type: 'POST',
+        url: "/newdoc",
+        data: JSON.stringify({
+          "doc_id": d_id,
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        error: function (e) {
+          console.log(e.responseText);
+          alert(e.responseText)
+        },
+        success: function (result) {
+          console.log(result)
+          alert("Recorded Successfully")
+        }
+      });
+      return false;
+    }
+  </script>
+
+  <script>
+    const p_btn = document.getElementById('p_sub');
+    p_btn.onclick = e => {
+      e.preventDefault();
+      const name = document.getElementById("p_name").value;
+      const id = document.getElementById("p_id").value;
+      const age = document.getElementById("p_age").value;
+      const add = document.getElementById("p_add").value;
+      const doc = document.getElementById("p_doc").value;
+      const cont = document.getElementById("p_cont").value;
+      const pass = document.getElementById("p_pass").value;
+
+      const ill = document.getElementById("p_ill").value;
+      const med = document.getElementById("p_med").value;
+      const trt = document.getElementById("p_trt").value;
+
+      $.ajax({
+        type: 'POST',
+        url: "/newpat",
+        data: JSON.stringify({
+          "p_name" : name,
+          "p_id" : id,
+          "p_age" : age,
+          "p_doc" : doc,
+          "p_add" : add,
+          "p_cont" : cont,
+          "p_pass" : pass,
+          "p_ill" : ill,
+          "p_med" : med,
+          "p_trt" : trt
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        error: function (e) {
+          console.log(e.responseText);
+          alert(e.responseText)
+        },
+        success: function (result) {
+          console.log(result)
+          alert("Recorded Successfully")
+        }
+      });
+      return false;
+    }
+
+    const rem_pat = document.getElementById("rem_pat");
+    rem_pat.onsubmit = e => {
+      e.preventDefault();
+      const p_id = document.getElementById("pa_id").value;
+      $.ajax({
+        type: 'POST',
+        url: "/rempat",
+        data: JSON.stringify({
+          "pat_id": p_id,
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        error: function (e) {
+          console.log(e.responseText);
+          alert(e.responseText)
+        },
+        success: function (result) {
+          console.log(result)
+          alert("Recorded Successfully")
+        }
+      });
+      return false;
+    }
+  </script>
+</body>
 </html>
